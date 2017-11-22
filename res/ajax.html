@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Ajax</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <style>
+        .result {
+            padding-top: 10px;
+        }
+        h1 {
+            padding-top: 25px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function displayResult(json) {
+            var res = JSON.parse(json);
+            if (res.error !== "") {
+                showError(res.error);
+                return
+            }
+
+            const query = document.createElement("div");
+            query.className = "alert alert-success";
+            query.innerHTML = res.query;
+
+            const table = document.createElement("table");
+            table.className = "table table-striped table-bordered";
+
+            const head = table.createTHead();
+            const row = head.insertRow();
+            for (var k = 0; k < res.result.header.length; k++) {
+                const cell = document.createElement("th");
+                cell.innerHTML = res.result.header[k];
+                row.appendChild(cell);
+            }
+
+            const body = table.createTBody();
+            if (res.result.rows) {
+                for (var i = 0; i < res.result.rows.length; i++) {
+                    const row = body.insertRow();
+                    for (var j = 0; j < res.result.rows[i].length; j++) {
+                        const cell = row.insertCell();
+                        cell.innerHTML = res.result.rows[i][j];
+                    }
+                }
+            }
+
+            const container = document.createElement("div");
+            container.className = "container result";
+            container.appendChild(query);
+            container.appendChild(table);
+            show(container)
+        }
+
+        function showError(err) {
+            const error = document.createElement("div");
+            error.className = "alert alert-danger";
+            error.innerHTML = err;
+
+            const container = document.createElement("div");
+            container.className = "container result";
+            container.appendChild(error);
+            show(container);
+        }
+
+        function show(item) {
+            var log = document.getElementById("log");
+            log.insertBefore(item, log.firstChild);
+        }
+
+        function sendQuery() {
+            var query = document.getElementById("query");
+            if (!query.value) {
+                return false;
+            }
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    displayResult(this.responseText);
+                }
+            };
+            xhttp.open("GET", "query?q=" + query.value, true);
+            xhttp.send();
+            return false;
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <h1>Welcome to Ajax</h1>
+            <p class="lead">This demo uses Ajax to talk to server.</p>
+
+            <form onsubmit="return sendQuery();">
+                <div class="form-group">
+                    <textarea class="form-control" id="query" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <div id="log"></div>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>
