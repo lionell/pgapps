@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-postgres
+  labels:
+    run: my-postgres
+spec:
+  type: NodePort
+  ports:
+  - port: 5432
+    protocol: TCP
+  selector:
+    run: my-postgres

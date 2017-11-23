@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: my-postgres
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: my-postgres
+    spec:
+      containers:
+      - name: my-postgres
+        image: postgres
+        env:
+          - name: "POSTGRES_PASSWORD"
+            value: "password"
+        ports:
+        - containerPort: 5432

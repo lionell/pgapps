@@ -7,30 +7,30 @@ import (
 )
 
 type Solver struct {
-	hub *Hub
-	db  database.Engine
+	Hub *Hub
+	Db  database.Engine
 }
 
 func NewSolver(h *Hub) *Solver {
 	db := database.NewPostgres()
 	db.Open()
 	return &Solver{
-		db:  db,
-		hub: h,
+		Db:  db,
+		Hub: h,
 	}
 }
 
 func (s Solver) Run() {
 	for {
 		select {
-		case query := <-s.hub.Queries:
+		case query := <-s.Hub.Queries:
 			log.Printf("Executing query '%s'.", query)
-			res, err := s.db.Exec(query)
+			res, err := s.Db.Exec(query)
 			if err != nil {
-				s.hub.Broadcast <- &message.Message{Query: query, Error: err.Error()}
+				s.Hub.Broadcast <- &message.Message{Query: query, Error: err.Error()}
 				break
 			}
-			s.hub.Broadcast <- &message.Message{Query: query, Result: *res}
+			s.Hub.Broadcast <- &message.Message{Query: query, Result: *res}
 		}
 	}
 }

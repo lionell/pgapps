@@ -8,7 +8,9 @@ import (
 )
 
 const (
-	dbUser     = "user"
+	dbHost     = "localhost"
+	dbPort     = "5432"
+	dbUser     = "postgres"
 	dbPassword = "password"
 	dbName     = "test"
 )
@@ -21,8 +23,17 @@ func NewPostgres() *Postgres {
 	return &Postgres{}
 }
 
+func (p *Postgres) OpenRemote(host, port string) (err error) {
+	info := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", host, port, dbUser, dbPassword, dbName)
+	p.db, err = sql.Open("postgres", info)
+	if err != nil {
+		return errors.Wrap(err, "can't open db connection")
+	}
+	return nil
+}
+
 func (p *Postgres) Open() (err error) {
-	info := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable", dbUser, dbPassword, dbName)
+	info := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", dbHost, dbPort, dbUser, dbPassword, dbName)
 	p.db, err = sql.Open("postgres", info)
 	if err != nil {
 		return errors.Wrap(err, "can't open db connection")
