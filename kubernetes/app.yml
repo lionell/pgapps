@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: app
-        image: lionell/websockets
+        image: lionell/websockets:v2
         ports:
         - containerPort: 8080
