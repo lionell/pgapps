@@ -12,7 +12,7 @@ const (
 	dbPort     = "5432"
 	dbUser     = "postgres"
 	dbPassword = "password"
-	dbName     = "test"
+	dbName     = "postgres"
 )
 
 type Postgres struct {
