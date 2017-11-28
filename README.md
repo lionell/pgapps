@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/lionell/pgapps.svg?branch=master)](https://travis-ci.org/lionell/pgapps)
 
-This repository shows many different interfaces to interact with database. From simple CLI to [WebSocket]-based colab notebook deployed to the cluster.
+This repository shows many different interfaces to interact with database. From simple CLI to colab notebook based on [WebSocket], deployed to the cluster.
 
 ## How it works
 
@@ -16,6 +16,38 @@ type Engine interface {
 }
 ```
 So that you can easily substitute database backend with anything you want(eg. [Aqua]).
+
+## CLI
+
+bla
+
+## RPC
+
+bla
+
+## REST API
+
+bla
+
+## Ajax
+
+bla
+
+## React
+
+bla
+
+## WebSockets
+
+bla
+
+## Kubernetes
+
+bla
+
+## Google Cloud Platform
+
+bla
 
 [WebSocket]: https://en.wikipedia.org/wiki/WebSocket
 [Aqua]: https://github.com/lionell/aqua
