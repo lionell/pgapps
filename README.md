@@ -6,7 +6,7 @@ This repository shows many different interfaces to interact with database. From 
 
 ## How it works
 
-All the interactions with database is done via `database.Engine` interface.
+All the interactions with database is done via
 ```go
 type Engine interface {
 	Open() error
@@ -15,5 +15,7 @@ type Engine interface {
 	Exec(query string) (*Table, error)
 }
 ```
+So that you can easily substitute database backend with anything you want(eg. [Aqua]).
 
 [WebSocket]: https://en.wikipedia.org/wiki/WebSocket
+[Aqua]: https://github.com/lionell/aqua
