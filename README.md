@@ -7,7 +7,7 @@ This repository shows many different interfaces to interact with database. From 
 ## How it works
 
 All the interactions with database is done via `database.Engine` interface.
-```(go)
+```go
 type Engine interface {
 	Open() error
 	OpenRemote(host, port string) error
