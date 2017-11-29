@@ -62,7 +62,7 @@ Connection to localhost:1234 established.
 
 ## REST API
 
-`rest` tool exposes REST API for database.
+`rest` tool exposes [REST API](rest-api-wiki) for database.
 
 To use it, we need to start server
 
@@ -154,3 +154,4 @@ MIT
 [Aqua]: https://github.com/lionell/aqua
 [cli-wiki]: https://en.wikipedia.org/wiki/Command-line_interface
 [rpc-wiki]: https://en.wikipedia.org/wiki/Remote_procedure_call
+[rest-api-wiki]: https://en.wikipedia.org/wiki/Representational_state_transfer
