@@ -147,7 +147,28 @@ result will be nicely displayed on the web page.
 
 ## React
 
-bla
+This demo frontend is based on [React](react-wiki).
+
+First we need to start the backend server
+
+```bash
+$ go run cmd/http/http.go -port 8080
+2017/11/29 04:07:14 Running server on port 8080.
+...
+```
+
+Then we need use NPM to start serving frontend
+
+```bash
+$ npm start --prefix react
+...
+```
+
+This should serve a page on port `3000` and automatically open a browser tab with it
+
+![React Screenshot](docs/react.png)
+
+Functionality is the same as for [Ajax](ajax).
 
 ## WebSockets
 
@@ -167,3 +188,4 @@ MIT
 [rpc-wiki]: https://en.wikipedia.org/wiki/Remote_procedure_call
 [rest-api-wiki]: https://en.wikipedia.org/wiki/Representational_state_transfer
 [ajax-wiki]: https://en.wikipedia.org/wiki/Ajax_(programming)
+[react-wiki]: https://en.wikipedia.org/wiki/React_(JavaScript_library)
