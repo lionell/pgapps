@@ -35,7 +35,27 @@ $ go run cmd/cli/cli.go
 
 ## RPC
 
-bla
+It's a client/server version that uses Remote Procedure Calls to communicate.
+
+User interface is pretty much the same as in the [CLI](#cli) version.
+To start server just run
+
+```bash
+$ go run cmd/server/server.go -port 1234
+2017/11/29 03:10:30 Listening on port 1234
+```
+
+Then you can connect via client
+
+```bash
+$ go run cmd/client/client.go -host localhost -port 1234
+Connection to localhost:1234 established.
+> select * from users
+   id     name   age
+    1   Ruslan    21
+    2     Dima    20
+    3      Mat    18
+```
 
 ## REST API
 
