@@ -1,6 +1,6 @@
 # PgApps
 
-<!--[![Build Status](https://travis-ci.org/lionell/pgapps.svg?branch=master)](https://travis-ci.org/lionell/pgapps) -->
+[//]: <> ([![Build Status](https://travis-ci.org/lionell/pgapps.svg?branch=master)](https://travis-ci.org/lionell/pgapps))
 
 This repository contains different ways to interact with database. From simple CLI to colab notebook based on [WebSocket], deployed to the cluster.
 All of these are **demos** and are not designed to be used in production.
