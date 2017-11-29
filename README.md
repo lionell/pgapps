@@ -18,7 +18,7 @@ type Engine interface {
 ```
 So that you can easily substitute database backend with anything you want(eg. [Aqua]).
 
-## CLI
+## 1. CLI
 
 `cli` is a very simple [Command Line Interface](cli-wiki) for database.
 
@@ -35,7 +35,7 @@ $ go run cmd/cli/cli.go
     3      Mat    18
 ```
 
-## RPC
+## 2. RPC
 
 `client` and `server` tools use [Remote Procedure Calls](rpc-wiki) to communicate.
 
@@ -60,7 +60,7 @@ Connection to localhost:1234 established.
     3      Mat    18
 ```
 
-## REST API
+## 3. REST API
 
 `rest` tool exposes [REST API](rest-api-wiki) for database.
 
@@ -126,7 +126,7 @@ $ curl http://localhost:8080/users/1
 }
 ```
 
-## Ajax
+## 5. Ajax
 
 `ajax` tool is using [Ajax](ajax-wiki) requests to communicate with server.
 
@@ -145,7 +145,7 @@ If you navigate to `localhost:8080` on the same machine, you should see somethin
 When you type a query and press enter, a new Ajax request is sent to server. After it's processed,
 result will be nicely displayed on the web page.
 
-## React
+## 6. React
 
 This demo frontend is based on [React](react).
 
@@ -174,7 +174,7 @@ This should serve a page on port `3000` and automatically open a browser tab wit
 
 Functionality is the same as for [Ajax](#ajax).
 
-## WebSockets
+## 7. WebSockets
 
 Here we are using [WebSockets](websocket-wiki) to build colaboratory notebook.
 
@@ -193,7 +193,7 @@ User-experience is pretty much the same as for [React](#react) and [Ajax](#ajax)
 
 ## Kubernetes
 
-### Building application image
+### 8. Building Docker image
 
 There is a `Dockerfile` in the root of the repo that you can use to build [Docker](docker) image
 for modified version of [WebSockets](#websockets) app. Default version assumes that we have [PostgreSQL](postgresql)
@@ -210,7 +210,7 @@ $ docker push lionell/websockets:v1
 
 Now you can find image linked to your account(you should substitute 'lionell' in the commands above).
 
-### Kubernetes on GCP(optional)
+### 9. Kubernetes on GCP(optional)
 
 Let's start a new [Kubernetes](kubernetes) cluster with 3 nodes on [Google Cloud Platform](gcp).
 
@@ -226,7 +226,7 @@ $ gcloud compute instances list
 
 For more information see [Deploying a containerized web application tutorial](kubernetes-tutorial).
 
-### Deploying to Kubernetes cluster
+### 10. Deploying to Kubernetes cluster
 
 We are going to use preconfigured Kubernetes resource files located in `kubernetes/` to create services
 and deployments.
@@ -258,7 +258,7 @@ In my case it's 35.202.209.153. So if I open it in the browser, I'll see my app.
 
 ![WebSockets screenshot](docs/websockets.png)
 
-### Application scaling
+### 11. Application scaling
 
 You can easily scale an application with Kubernetes. For example we can scale our `app` deployment like this
 
@@ -270,7 +270,7 @@ This will create 2 different pods for our service, and all the ingress traffic w
 the pods. In our particular case, **scaling is not useful**, as we'll loose ability to communicate query results
 to other users(that hitted different endpoint).
 
-### New version rollout
+### 12. New version rollout
 
 We can easily rollout a new version of an application with Kubernetes
 
