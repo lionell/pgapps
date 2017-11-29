@@ -128,7 +128,7 @@ $ curl http://localhost:8080/users/1
 
 ## Ajax
 
-`ajax` tool is using Ajax requests to communicate with server.
+`ajax` tool is using [Ajax](ajax-wiki) requests to communicate with server.
 
 After you start the server, you can use user-friendly frontend to query database.
 
@@ -138,7 +138,7 @@ $ go run cmd/ajax/ajax.go -port 8080
 ...
 ```
 
-If you navigate to `localhost:8080` on the same machine, you should see something like this.
+If you navigate to `localhost:8080` on the same machine, you should see something like
 
 ![Ajax Screenshot](docs/ajax.png)
 
@@ -166,3 +166,4 @@ MIT
 [cli-wiki]: https://en.wikipedia.org/wiki/Command-line_interface
 [rpc-wiki]: https://en.wikipedia.org/wiki/Remote_procedure_call
 [rest-api-wiki]: https://en.wikipedia.org/wiki/Representational_state_transfer
+[ajax-wiki]: https://en.wikipedia.org/wiki/Ajax_(programming)
