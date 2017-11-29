@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: my-postgres
-        image: postgres
+        image: postgres:latest
         env:
           - name: "POSTGRES_PASSWORD"
             value: "password"
