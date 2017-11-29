@@ -35,7 +35,7 @@ $ go run cmd/cli/cli.go
 
 ## RPC
 
-It's a client/server version that uses Remote Procedure Calls to communicate.
+It's a client/server version that uses [Remote Procedure Calls](rpc-wiki) to communicate.
 
 User interface is pretty much the same as in the [CLI](#cli) version.
 To start server just run
@@ -43,6 +43,7 @@ To start server just run
 ```bash
 $ go run cmd/server/server.go -port 1234
 2017/11/29 03:10:30 Listening on port 1234
+...
 ```
 
 Then you can connect via client
@@ -83,3 +84,4 @@ bla
 
 [WebSocket]: https://en.wikipedia.org/wiki/WebSocket
 [Aqua]: https://github.com/lionell/aqua
+[rpc-wiki]: https://en.wikipedia.org/wiki/Remote_procedure_call
