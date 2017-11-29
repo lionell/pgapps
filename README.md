@@ -172,11 +172,24 @@ This should serve a page on port `3000` and automatically open a browser tab wit
 
 ![React Screenshot](docs/react.png)
 
-Functionality is the same as for [Ajax](ajax).
+Functionality is the same as for [Ajax](#ajax).
 
 ## WebSockets
 
-bla
+Here we are using [WebSockets](websocket-wiki) to build colaboratory notebook.
+
+To use `websocket` tool just start the server
+
+```bash
+$ go run cmd/websocket/websocket.go -port 8080
+2017/11/29 04:18:56 Running server on port 8080.
+...
+```
+
+Now everybody can connect on this port and run queries against your database. What's new here, is that **everybody will
+see queries and results of others**. It's like Google Docs but for queries :)
+
+User-experience is pretty much the same as for [React](#react) and [Ajax](#ajax).
 
 ## Kubernetes
 
@@ -194,3 +207,4 @@ MIT
 [ajax-wiki]: https://en.wikipedia.org/wiki/Ajax_(programming)
 [react]: https://reactjs.org/
 [npm]: https://www.npmjs.com/
+[websocket-wiki]: https://en.wikipedia.org/wiki/WebSocket
