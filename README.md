@@ -224,6 +224,8 @@ Now you should be able to see 3 nodes if you run
 $ gcloud compute instances list
 ```
 
+For more information see [Deploying a containerized web application tutorial](kubernetes-tutorial).
+
 ### Deploying to Kubernetes cluster
 
 We are going to use preconfigured Kubernetes resource files located in `kubernetes/` to create services
@@ -274,14 +276,14 @@ We can easily rollout a new version of an application with Kubernetes.
 
 TODO(lionell): Finish this part.
 
+### Cleaning up(optional)
+
 P.S. Don't forget to **shut your cluster down**.
 
 ```bash
 $ kubectl delete service app
 $ gclould container clusters delete websockets-cluster
 ```
-
-For more information see [Deploying a containerized web application tutorial](kubernetes-tutorial).
 
 ## License
 
