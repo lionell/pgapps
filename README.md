@@ -20,7 +20,7 @@ So that you can easily substitute database backend with anything you want(eg. [A
 
 ## CLI
 
-Implementation of a very simple [Command Line Interface](cli-wiki) for database.
+`cli` is a very simple [Command Line Interface](cli-wiki) for database.
 
 After you run the tool, you'll be welcomed with a prompt.
 Just type the query you want to run and press enter. It will be executed on the backend, and you'll see the nicely formatted results.
@@ -37,7 +37,7 @@ $ go run cmd/cli/cli.go
 
 ## RPC
 
-`client` and `server` are tools that use [Remote Procedure Calls](rpc-wiki) to communicate.
+`client` and `server` tools use [Remote Procedure Calls](rpc-wiki) to communicate.
 
 User interface is pretty much the same as in the [CLI](#cli) version.
 To start server just run
@@ -89,6 +89,37 @@ $ curl http://localhost:8080/users/1
     [
       "1",
       "Ruslan",
+      "21"
+    ]
+  ]
+}
+```
+
+This table shows how to make other REST calls, and whether you need to specify JSON data in request.
+
+| Action       | Method | Pattern       | Data |
+|:-------------|:-------|:--------------|:-----|
+| Get all      | GET    | {table}       | No   |
+| Get by ID    | GET    | {table}/{id}  | No   |
+| Add new      | POST   | {table}       | Yes  |
+| Update by ID | PUT    | {table}/{id}  | Yes  |
+| Remove by ID | DELETE | {table}/{id}  | No   |
+
+For example if we want to update name for a user with `id=1` we can do it this way
+
+```bash
+$ curl -X PUT --data '{"header":["name"],"rows":[["Nick"]]}' http://localhost:8080/users/1
+$ curl http://localhost:8080/users/1
+{
+  "header": [
+    "id",
+    "name",
+    "age"
+  ],
+  "rows": [
+    [
+      "1",
+      "Nick",
       "21"
     ]
   ]
