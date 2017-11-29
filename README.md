@@ -196,7 +196,7 @@ User-experience is pretty much the same as for [React](#react) and [Ajax](#ajax)
 ### Building application image
 
 There is a `Dockerfile` in the root of the repo that you can use to build [Docker](docker) image
-for modified version of [WebSockets](#websockets) app. Default version assumes that we have PostgreSQL
+for modified version of [WebSockets](#websockets) app. Default version assumes that we have [PostgreSQL](postgresql)
 running locally. Here you can specify where database is located.
 
 To build an image and push it to [Docker Hub](docker-hub) just do
@@ -303,3 +303,4 @@ MIT
 [kubernetes]: https://kubernetes.io
 [gcp]: https://cloud.google.com
 [kubernetes-tutorial]: https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
+[postgresql]: https://www.postgresql.org
