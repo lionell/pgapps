@@ -20,6 +20,8 @@ So that you can easily substitute database backend with anything you want(eg. [A
 
 ## CLI
 
+Implementation of a very simple [Command Line Interface](cli-wiki) for database.
+
 After you run the tool, you'll be welcomed with a prompt.
 Just type the query you want to run and press enter. It will be executed on the backend, and you'll see the nicely formatted results.
 To close the tool just enter `exit`.
@@ -84,4 +86,5 @@ bla
 
 [WebSocket]: https://en.wikipedia.org/wiki/WebSocket
 [Aqua]: https://github.com/lionell/aqua
+[cli-wiki]: https://en.wikipedia.org/wiki/Command-line_interface
 [rpc-wiki]: https://en.wikipedia.org/wiki/Remote_procedure_call
