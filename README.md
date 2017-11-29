@@ -37,7 +37,7 @@ $ go run cmd/cli/cli.go
 
 ## RPC
 
-It's a client/server version that uses [Remote Procedure Calls](rpc-wiki) to communicate.
+`client` and `server` are tools that use [Remote Procedure Calls](rpc-wiki) to communicate.
 
 User interface is pretty much the same as in the [CLI](#cli) version.
 To start server just run
@@ -62,7 +62,36 @@ Connection to localhost:1234 established.
 
 ## REST API
 
-bla
+`rest` tool exposes REST API for database.
+
+To use it, we need to start server
+
+```bash
+$ go run cmd/rest/rest.go -port 8080
+2017/11/29 03:19:41 Running server on port 8080.
+...
+```
+
+Server can serve queries to any table in the database.
+Different tables are exposed as a different REST resources. Here is how you can make a request
+
+```bash
+$ curl http://localhost:8080/users/1
+{
+  "header": [
+    "id",
+    "name",
+    "age"
+  ],
+  "rows": [
+    [
+      "1",
+      "Ruslan",
+      "21"
+    ]
+  ]
+}
+```
 
 ## Ajax
 
@@ -83,6 +112,10 @@ bla
 ## Google Cloud Platform
 
 bla
+
+## License
+
+MIT
 
 [WebSocket]: https://en.wikipedia.org/wiki/WebSocket
 [Aqua]: https://github.com/lionell/aqua
