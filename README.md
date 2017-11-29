@@ -140,7 +140,7 @@ $ go run cmd/ajax/ajax.go -port 8080
 
 If you navigate to `localhost:8080` on the same machine, you should see something like
 
-![Ajax Screenshot](docs/ajax.png)
+<!--![Ajax Screenshot](docs/ajax.png)-->
 
 When you type a query and press enter, a new Ajax request is sent to server. After it's processed,
 result will be nicely displayed on the web page.
@@ -170,7 +170,7 @@ The app is running at:
 
 This should serve a page on port `3000` and automatically open a browser tab with it
 
-![React Screenshot](docs/react.png)
+<!--![React Screenshot](docs/react.png)-->
 
 Functionality is the same as for [Ajax](#ajax).
 
@@ -256,7 +256,7 @@ app           LoadBalancer   10.43.251.48    35.202.209.153   80:31914/TCP   2m
 
 In my case it's 35.202.209.153. So if I open it in the browser, I'll see my app. Hooray!
 
-![WebSockets screenshot](docs/websockets.png)
+<!--![WebSockets screenshot](docs/websockets.png)-->
 
 ### 11. Application scaling
 
@@ -289,9 +289,9 @@ $ kubectl delete service app
 $ gclould container clusters delete websockets-cluster
 ```
 
-## License
+<!-- ## License-->
 
-MIT
+<!--MIT-->
 
 [WebSocket]: https://en.wikipedia.org/wiki/WebSocket
 [Aqua]: https://github.com/lionell/aqua
