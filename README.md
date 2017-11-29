@@ -128,7 +128,22 @@ $ curl http://localhost:8080/users/1
 
 ## Ajax
 
-bla
+`ajax` tool is using Ajax requests to communicate with server.
+
+After you start the server, you can use user-friendly frontend to query database.
+
+```bash
+$ go run cmd/ajax/ajax.go -port 8080
+2017/11/29 03:46:23 Running server on port 8080.
+...
+```
+
+If you navigate to `localhost:8080` on the same machine, you should see something like this.
+
+![Ajax Screenshot](docs/ajax.png)
+
+When you type a query and press enter, a new Ajax request is sent to server. After it's processed,
+result will be nicely displayed on the web page.
 
 ## React
 
@@ -139,10 +154,6 @@ bla
 bla
 
 ## Kubernetes
-
-bla
-
-## Google Cloud Platform
 
 bla
 
