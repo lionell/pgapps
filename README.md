@@ -226,7 +226,37 @@ $ gcloud compute instances list
 
 ### Deploying to Kubernetes cluster
 
-Let's say that we have a Kubernetes clus
+We are going to use preconfigured Kubernetes resource files located in `kubernetes/` to create services
+and deployments.
+
+These commands will deploy PostgreSQL database to Kubernetes
+
+```bash
+$ kubectl create -f kubernetes/my-postgres-service.yml
+$ kubectl create -f kubernetes/my-postgres.yml
+```
+
+Then we need to deploy our application. Deployment file `kubernetes/app.yml` uses Docker image `lionell/websockets:v1`
+to create container
+
+```bash
+$ kubectl create -f kubernetes/app-service.yml
+$ kubectl create -f kubernetes/app.yml
+```
+
+Let's find external IP address GCP issued to load balancer
+
+```bash
+$ kubectl get svc/app
+NAME          TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)        AGE
+app           LoadBalancer   10.43.251.48    35.202.209.153   80:31914/TCP   2m
+```
+
+In my case it's 35.202.209.153. So if I open it in the browser, I'll see my app. Hooray!
+
+![WebSockets screenshot](docs/websockets.png)
+
+P.S. Don't forget to **shut your cluster down**.
 
 For more information see [Deploying a containerized web application tutorial](kubernetes-tutorial).
 
