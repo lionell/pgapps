@@ -73,7 +73,9 @@ $ go run cmd/rest/rest.go -port 8080
 ```
 
 Server can serve queries to any table in the database.
-Different tables are exposed as a different REST resources. Here is how you can make a request
+Different tables are exposed as a different REST resources.
+
+Here is how you can make a request
 
 ```bash
 $ curl http://localhost:8080/users/1
