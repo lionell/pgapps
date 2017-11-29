@@ -161,6 +161,10 @@ Then we need use NPM to start serving frontend
 
 ```bash
 $ npm start --prefix react
+
+Compiled successfully!
+The app is running at:
+  http://localhost:3000/
 ...
 ```
 
