@@ -256,7 +256,30 @@ In my case it's 35.202.209.153. So if I open it in the browser, I'll see my app.
 
 ![WebSockets screenshot](docs/websockets.png)
 
+### Application scaling
+
+You can easily scale an application with Kubernetes. For example we can scale our `app` deployment like this
+
+```
+$ kubectl scale deployment/app --replicas 2
+```
+
+This will create 2 different pods for our service, and all the ingress traffic will be load balanced between
+the pods. In our particular case, **scaling is not useful**, as we'll loose ability to communicate query results
+to other users(that hitted different endpoint).
+
+### New version rollout
+
+We can easily rollout a new version of an application with Kubernetes.
+
+TODO(lionell): Finish this part.
+
 P.S. Don't forget to **shut your cluster down**.
+
+```bash
+$ kubectl delete service app
+$ gclould container clusters delete websockets-cluster
+```
 
 For more information see [Deploying a containerized web application tutorial](kubernetes-tutorial).
 
