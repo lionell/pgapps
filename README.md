@@ -20,7 +20,7 @@ So that you can easily substitute database backend with anything you want(eg. [A
 
 ## CLI
 
-It's a very simle command line interface to interact with database. After you run the tool, you'll be welcomed with a prompt.
+After you run the tool, you'll be welcomed with a prompt.
 Just type the query you want to run and press enter. It will be executed on the backend, and you'll see the nicely formatted results.
 To close the tool just enter `exit`.
 
