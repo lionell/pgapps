@@ -272,9 +272,13 @@ to other users(that hitted different endpoint).
 
 ### New version rollout
 
-We can easily rollout a new version of an application with Kubernetes.
+We can easily rollout a new version of an application with Kubernetes
 
-TODO(lionell): Finish this part.
+```bash
+$ kubectl set image deployment/app app=lionell/websockets:v2
+```
+
+This will sequentually turn down each replica in deployment and replace it with a new version. So that your application can function during the update.
 
 ### Cleaning up(optional)
 
