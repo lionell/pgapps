@@ -147,7 +147,7 @@ result will be nicely displayed on the web page.
 
 ## React
 
-This demo frontend is based on [React](react-wiki).
+This demo frontend is based on [React](react).
 
 First we need to start the backend server
 
@@ -157,7 +157,7 @@ $ go run cmd/http/http.go -port 8080
 ...
 ```
 
-Then we need use NPM to start serving frontend
+Then we use [NPM](npm) to start serving frontend
 
 ```bash
 $ npm start --prefix react
@@ -192,4 +192,5 @@ MIT
 [rpc-wiki]: https://en.wikipedia.org/wiki/Remote_procedure_call
 [rest-api-wiki]: https://en.wikipedia.org/wiki/Representational_state_transfer
 [ajax-wiki]: https://en.wikipedia.org/wiki/Ajax_(programming)
-[react-wiki]: https://en.wikipedia.org/wiki/React_(JavaScript_library)
+[react]: https://reactjs.org/
+[npm]: https://www.npmjs.com/
