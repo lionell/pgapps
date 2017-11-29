@@ -193,7 +193,42 @@ User-experience is pretty much the same as for [React](#react) and [Ajax](#ajax)
 
 ## Kubernetes
 
-bla
+### Building application image
+
+There is a `Dockerfile` in the root of the repo that you can use to build [Docker](docker) image
+for modified version of [WebSockets](#websockets) app. Default version assumes that we have PostgreSQL
+running locally. Here you can specify where database is located.
+
+To build an image and push it to [Docker Hub](docker-hub) just do
+
+```bash
+$ docker build -t lionell/websockets:v1 .
+...
+
+$ docker push lionell/websockets:v1
+```
+
+Now you can find image linked to your account(you should substitute 'lionell' in the commands above).
+
+### Kubernetes on GCP(optional)
+
+Let's start a new [Kubernetes](kubernetes) cluster with 3 nodes on [Google Cloud Platform](gcp).
+
+```bash
+$ gcloud container clusters create websockets-cluster --num-nodes=3
+```
+
+Now you should be able to see 3 nodes if you run
+
+```bash
+$ gcloud compute instances list
+```
+
+### Deploying to Kubernetes cluster
+
+Let's say that we have a Kubernetes clus
+
+For more information see [Deploying a containerized web application tutorial](kubernetes-tutorial).
 
 ## License
 
@@ -205,6 +240,11 @@ MIT
 [rpc-wiki]: https://en.wikipedia.org/wiki/Remote_procedure_call
 [rest-api-wiki]: https://en.wikipedia.org/wiki/Representational_state_transfer
 [ajax-wiki]: https://en.wikipedia.org/wiki/Ajax_(programming)
-[react]: https://reactjs.org/
-[npm]: https://www.npmjs.com/
+[react]: https://reactjs.org
+[npm]: https://www.npmjs.com
 [websocket-wiki]: https://en.wikipedia.org/wiki/WebSocket
+[docker]: https://www.docker.com
+[docker-hub]: https://hub.docker.com
+[kubernetes]: https://kubernetes.io
+[gcp]: https://cloud.google.com
+[kubernetes-tutorial]: https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
