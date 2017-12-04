@@ -8,19 +8,21 @@ All of these are **demos** and are not designed to be used in production.
 ## How it works
 
 All the interactions with database is done via
+
 ```go
 type Engine interface {
-	Open() error
-	OpenRemote(host, port string) error
-	Close()
-	Exec(query string) (*Table, error)
+  Open() error
+  OpenRemote(host, port string) error
+  Close()
+  Exec(query string) (*Table, error)
 }
 ```
-So that you can easily substitute database backend with anything you want(eg. [Aqua](aqua)).
+
+So that you can easily substitute database backend with anything you want(eg. [Aqua][aqua]).
 
 ## CLI
 
-`cli` is a very simple [Command Line Interface](cli-wiki) for database.
+`cli` is a very simple [Command Line Interface][cli-wiki] for database.
 
 After you run the tool, you'll be welcomed with a prompt.
 Just type the query you want to run and press enter. It will be executed on the backend, and you'll see the nicely formatted results.
@@ -37,7 +39,7 @@ $ go run cmd/cli/cli.go
 
 ## RPC
 
-`client` and `server` tools use [Remote Procedure Calls](rpc-wiki) to communicate.
+`client` and `server` tools use [Remote Procedure Calls][rpc-wiki] to communicate.
 
 User interface is pretty much the same as in the [CLI](#cli) version.
 To start server just run
@@ -62,7 +64,7 @@ Connection to localhost:1234 established.
 
 ## REST API
 
-`rest` tool exposes [REST API](rest-api-wiki) for database.
+`rest` tool exposes [REST API][rest-api-wiki] for database.
 
 To use it, we need to start server
 
@@ -128,7 +130,7 @@ $ curl http://localhost:8080/users/1
 
 ## Ajax
 
-`ajax` tool is using [Ajax](ajax-wiki) requests to communicate with server.
+`ajax` tool is using [Ajax][ajax-wiki] requests to communicate with server.
 
 After you start the server, you can use user-friendly frontend to query database.
 
@@ -147,7 +149,7 @@ result will be nicely displayed on the web page.
 
 ## React
 
-This demo frontend is based on [React](react).
+This demo frontend is based on [React][react].
 
 First we need to start the backend server
 
@@ -157,7 +159,7 @@ $ go run cmd/http/http.go -port 8080
 ...
 ```
 
-Then we use [NPM](npm) to start serving frontend
+Then we use [NPM][npm] to start serving frontend
 
 ```bash
 $ npm start --prefix react
@@ -176,7 +178,7 @@ Functionality is the same as for [Ajax](#ajax).
 
 ## WebSockets
 
-Here we are using [WebSockets](websocket-wiki) to build colaboratory notebook.
+Here we are using [WebSockets][websocket-wiki] to build colaboratory notebook.
 
 To use `websocket` tool just start the server
 
@@ -195,11 +197,11 @@ User-experience is pretty much the same as for [React](#react) and [Ajax](#ajax)
 
 ### Building Docker image
 
-There is a `Dockerfile` in the root of the repo that you can use to build [Docker](docker) image
-for modified version of [WebSockets](#websockets) app. Default version assumes that we have [PostgreSQL](postgresql)
+There is a `Dockerfile` in the root of the repo that you can use to build [Docker][docker] image
+for modified version of [WebSockets](#websockets) app. Default version assumes that we have [PostgreSQL][postgresql]
 running locally. Here you can specify where database is located.
 
-To build an image and push it to [Docker Hub](docker-hub) just do
+To build an image and push it to [Docker Hub][docker-hub] just do
 
 ```bash
 $ docker build -t lionell/websockets:v1 .
@@ -212,7 +214,7 @@ Now you can find image linked to your account(you should substitute 'lionell' in
 
 ### Kubernetes on GCP(optional)
 
-Let's start a new [Kubernetes](kubernetes) cluster with 3 nodes on [Google Cloud Platform](gcp).
+Let's start a new [Kubernetes][kubernetes] cluster with 3 nodes on [Google Cloud Platform][gcp].
 
 ```bash
 $ gcloud container clusters create websockets-cluster --num-nodes=3
@@ -224,7 +226,7 @@ Now you should be able to see 3 nodes if you run
 $ gcloud compute instances list
 ```
 
-For more information see [Deploying a containerized web application tutorial](kubernetes-tutorial).
+For more information see [Deploying a containerized web application tutorial][kubernetes-tutorial].
 
 ### Deploying to Kubernetes cluster
 
